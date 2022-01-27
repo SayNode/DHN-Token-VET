@@ -39,8 +39,8 @@ contract ERC20 is Context, IERC20 {
 
     uint256 private _totalSupply;
 
-    string immutable private _name;
-    string immutable private _symbol;
+    string constant private _name = "Dohrnii";
+    string constant private _symbol = "DHN";
     uint8 private _decimals;
 
     /**
@@ -52,16 +52,15 @@ contract ERC20 is Context, IERC20 {
      * All three of these values are immutable: they can only be set once during
      * construction.
      */
-    constructor (string memory name_, string memory symbol_) public {
-        _name = name_;
-        _symbol = symbol_;
+    constructor ()  {
+        
         _decimals = 18;
     }
 
     /**
      * @dev Returns the name of the token.
      */
-    function name() public view returns (string memory) {
+    function name() public pure returns (string memory) {
         return _name;
     }
 
@@ -69,7 +68,7 @@ contract ERC20 is Context, IERC20 {
      * @dev Returns the symbol of the token, usually a shorter version of the
      * name.
      */
-    function symbol() public view returns (string memory) {
+    function symbol() public pure returns (string memory) {
         return _symbol;
     }
 
